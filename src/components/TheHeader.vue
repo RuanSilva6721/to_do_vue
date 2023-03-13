@@ -36,7 +36,25 @@
                 console.log(newValue, oldValue)
                 console.log('teste')
             }
-        }
+        },
+        beforeCreate(){
+            console.log('beforeCreate');
+        },
+        created() {
+            console.log('Create');
+        },
+        beforeMount() {
+            console.log('beforeMount');
+        },
+        mounted() {
+            console.log('mounted');
+        },
+        beforeUnmount() {
+            console.log('beforeUnmount');
+        },
+        unmounted() {
+            console.log('unmounted');
+        },
 
     }
 
