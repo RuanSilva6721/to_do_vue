@@ -1,6 +1,9 @@
 <template>
     <div>
-        <h1>Header</h1>
+        <slot></slot>
+        <slot name="title"></slot>
+
+
         <input type="text" v-model="name" > 
         {{ name }}
 

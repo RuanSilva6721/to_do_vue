@@ -1,6 +1,10 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <TheHeader v-show="showHeader"/>
+  <TheHeader v-show="showHeader"><h1>HEader</h1> <template v-slot:title>
+    <div>
+      <p>teste</p>
+    </div>
+  </template> </TheHeader>
 
   <div>
       <div 
@@ -9,17 +13,18 @@
           {{obj.title }}
 
       </div>
-
+      <BaseAlert/>
   </div>
 </template>
 
 <script>
-import TheHeader from './components/TheHeader.vue'
-
+import TheHeader from '@/components/TheHeader.vue'
+import BaseAlert from '@/components/BaseAlert.vue'
 export default {
   name: 'App',
   components: {
     TheHeader,
+    BaseAlert,
   },
   data(){
     return {
