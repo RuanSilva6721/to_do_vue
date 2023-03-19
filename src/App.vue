@@ -1,77 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <TheHeader v-show="showHeader"><h1>HEader</h1> <template v-slot:title>
-    <div>
-      <p>teste</p>
-    </div>
-  </template> </TheHeader>
-
-  <div>
-      <div 
-      v-for="obj in todos"
-      v-bind:key="obj.id">
-          {{obj.title }}
-
-      </div>
-      <BaseAlert
-      v-if="showAlert"
-      variant="danger"
-      text= "Seus formulário Teste"
-      @close="onClose()"
-      />
-  </div>
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link> |
+    <router-link :to="rotaDinamica">Serviços</router-link>
+  </nav>
+  <router-view/>
 </template>
 
 <script>
-import TheHeader from '@/components/TheHeader.vue'
-import BaseAlert from '@/components/BaseAlert.vue'
 export default {
-  name: 'App',
-  components: {
-    TheHeader,
-    BaseAlert,
-  },
   data(){
     return {
-        showAlert: true,
-        showHeader: true,
-        todos: [
-  {
-    "userId": 1,
-    "id": 1,
-    "title": "delectus aut autem",
-    "completed": false
-  },
-  {
-    "userId": 1,
-    "id": 2,
-    "title": "quis ut nam facilis et officia qui",
-    "completed": false
-  },
-  {
-    "userId": 1,
-    "id": 3,
-    "title": "fugiat veniam minus",
-    "completed": false
-  },
-  {
-    "userId": 1,
-    "id": 4,
-    "title": "et porro tempora",
-    "completed": true
-  },
-  {
-    "userId": 1,
-    "id": 5,
-    "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
-    "completed": false
-  }
-]
-    }
-  },
-  methods:{
-    onClose() {
-      this.showAlert = false;
+      rotaDinamica:'services'
     }
   }
 }
@@ -84,6 +24,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
