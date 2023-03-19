@@ -14,7 +14,8 @@
 
       </div>
       <BaseAlert
-      variant=""
+      variant="danger"
+      text= "Seus formulário Teste"
       />
   </div>
 </template>

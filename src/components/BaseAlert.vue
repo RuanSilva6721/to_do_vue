@@ -1,8 +1,8 @@
 <template>
     <div>
         TesteBAse
-        <div :class="`alert alert-${variant}`">
-        seu formulário foi enviado com sucesso!!
+        <div :class="baseClass">
+        {{ text }}
         </div>
 
 
@@ -11,7 +11,15 @@
 <script>
 export default {
     name: 'BaseAlert',
-    props:['variant']
+    props:['variant', 'text'],
+    computed:{
+        baseClass(){
+            return [
+                'alert',
+                this.variant ? `alert-${this.variant}`: ''
+            ]
+        }
+    }
         
 }
 
