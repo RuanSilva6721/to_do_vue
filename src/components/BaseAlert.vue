@@ -5,6 +5,10 @@
         {{ text }}
         </div>
 
+        <button @click="onClick">
+        x
+        </button>
+
 
     </div>
 </template>
@@ -18,6 +22,12 @@ export default {
                 'alert',
                 this.variant ? `alert-${this.variant}`: ''
             ]
+        }
+    },
+    methods:{
+        onClick(){
+            this.$emit('close')
+            console.log("clicou");
         }
     }
         

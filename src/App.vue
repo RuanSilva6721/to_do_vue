@@ -14,8 +14,10 @@
 
       </div>
       <BaseAlert
+      v-if="showAlert"
       variant="danger"
       text= "Seus formulário Teste"
+      @close="onClose()"
       />
   </div>
 </template>
@@ -31,6 +33,7 @@ export default {
   },
   data(){
     return {
+        showAlert: true,
         showHeader: true,
         todos: [
   {
@@ -64,6 +67,11 @@ export default {
     "completed": false
   }
 ]
+    }
+  },
+  methods:{
+    onClose() {
+      this.showAlert = false;
     }
   }
 }
