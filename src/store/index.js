@@ -13,6 +13,12 @@ export default createStore({
   getters: {
   },
   mutations: {
+    storeUser(state, data){
+
+      console.log('Teste state',data)
+      state.user = data
+
+    },
   },
   actions: {
   },
