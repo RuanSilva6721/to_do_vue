@@ -7,7 +7,18 @@ export default createStore({
               last_name: 'Snow',
               email: 'jon@snow.com.br'
           },
-          products: []
+          products: [
+            {
+              id : 0,
+              name: 'bola',
+              price: 200
+            },
+            {
+              id : 1,
+              name: 'Chuteira',
+              price: 100
+            },
+          ]
 
   },
   getters: {
